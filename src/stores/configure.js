@@ -1,0 +1,41 @@
+import { createStore, applyMiddleware, compose } from "redux";
+import reducers from "./reducers";
+import { routerMiddleware } from "connected-react-router";
+
+// 개발 서버 인지 운영 서버 인지 확인
+const isDev = process.env.NODE_ENV === "development" || true;
+
+const devtools =
+  isDev && window.devToolsExtension ? window.devToolsExtension : () => fn => fn;
+
+const configureStore = (initialState, history) => {
+    
+  // 스토어 인핸서 : 스토어 생산자를 결합하여 새 스토어 생산자를 반환하는 고차 함수
+  const enhancer = [
+
+    applyMiddleware(routerMiddleware(history)),
+    devtools({
+      actionsBlacklist: ["trade/UPDATE_TICKER"],
+      maxAge: 1000
+    })
+  ];
+
+  const store = createStore(
+    reducers(history),
+    initialState,
+    compose(...enhancer)
+  );
+
+
+  if (module.hot) {
+    module.hot.accept("./reducers", () => {
+      const nextReducer = require("./reducers").default;
+      store.replaceReducer(nextReducer);
+    });
+  }
+
+
+  return store;
+};
+
+export default configureStore;

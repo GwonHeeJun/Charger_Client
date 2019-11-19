@@ -1,0 +1,55 @@
+@media screen and (min-width:640px) {
+    .box_wrapper {
+        -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .08);
+        box-shadow: 0 3px 8px rgba(0, 0, 0, .08);
+        margin: 1% auto
+    }
+}
+
+@media screen and (min-width:768px) {
+    .box_wrapper {
+        margin: 3% auto;
+    }
+}
+
+.box_wrapper {
+    background-color: #fff;
+    color: #333;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 640px
+}
+
+.table_wrapper {
+    margin: 0 auto;
+    max-width: 640px
+}
+
+.header_wrapper {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding: 3% 4%;
+
+    .coinone_logo {
+        height: auto;
+        margin-top: 4px;
+        width: 160px;
+    }
+
+    .category {
+        -moz-transform: translateY(-15px);
+        -ms-transform: translateY(-15px);
+        -o-transform: translateY(-15px);
+        -webkit-transform: translateY(-15px);
+        color: #aaa;
+        font-size: 16px;
+        font-weight: 400;
+        margin: 0;
+        transform: translateY(-15px);
+    }
+
+}
+
+
+
+

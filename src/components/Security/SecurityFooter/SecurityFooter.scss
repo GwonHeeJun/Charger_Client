@@ -1,0 +1,31 @@
+.footer_slogan {
+    color: #aaa;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.6;
+    margin: 4px 0 8px
+}
+
+.footer_wrapper {
+    border-top: 1px solid #eee;
+    padding: 2% 5% 5%;
+
+    .social_icon {
+        margin-right: 16px
+    }
+
+    address {
+        color: #aaa;
+        display: block;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 300;
+        margin-bottom: 0
+    }
+
+    .copyright {
+        color: #bbb;
+        display: block;
+        margin-top: 4px
+    }
+}
