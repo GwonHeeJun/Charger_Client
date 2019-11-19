@@ -18,10 +18,8 @@ export class Header extends Component {
             <Logo />
           </Link>
           <span className="c-header__wrapper--list">거래소</span>
-          <span className="c-header__wrapper--list">프로차트</span>
-          <span className="c-header__wrapper--list">자산</span>
-          <span className="c-header__wrapper--list">코인정보</span>
-          <span className="c-header__wrapper--list">노드</span>
+          <span className="c-header__wrapper--list">충전소</span>
+          <span className="c-header__wrapper--list">고객센터</span>
           <Notification />
           <div className="c-header__wrapper--signup">회원가입</div>
           <div className="c-header__wrapper--signin">로그인</div>
