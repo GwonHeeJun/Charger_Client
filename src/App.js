@@ -5,7 +5,11 @@ import { ConnectedRouter } from "connected-react-router";
 import { Provider } from "react-redux";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
+// 컨테이너 모듈
 import MainContainer from './containers/MainContainer/MainContainer';
+import Banner from "./components/Modals/Banner/Banner";
+import Signin from "./components/Auth/Signin/Signin";
+import Register from "./components/Auth/Register/Register";
 
 const theme = createMuiTheme({
   typography: {
@@ -25,7 +29,10 @@ const theme = createMuiTheme({
 
 const RoutesComponent = () => (
   <Fragment>
-    <Route exact path="/" component={MainContainer}/>
+    <Route exact path="/" component={MainContainer} />
+    <Route exact path="/main" component={Banner} />
+    <Route exact path="/signin" component={Signin} />
+    <Route exact path="/register" component={Register} />
   </Fragment>
 );
 
