@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ReactComponent as Logo } from "../../assets/sample.logo.svg";
+import { ReactComponent as Charger } from "../../assets/Charger.svg";
 import { ReactComponent as Notification } from "../../assets/notification.svg";
 import { Link } from "react-router-dom";
 import "./Header.scss";
@@ -15,7 +15,7 @@ export class Header extends Component {
       <nav class="c-header">
         <div class="c-header__wrapper">
           <Link to="/">
-            <Logo />
+            <Charger />
           </Link>
           <span className="c-header__wrapper--list">거래소</span>
           <span className="c-header__wrapper--list">충전소</span>
