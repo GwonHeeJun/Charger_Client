@@ -12,6 +12,7 @@ import Signin from "./components/Auth/Signin/Signin";
 import Register from "./components/Auth/Register/Register";
 import Header from "./components/Header/Header";
 import SubHeader from "./components/SubHeader/SubHeader";
+import RepresentContainer from "./containers/RepresentContainer/RepresentContainer";
 
 const theme = createMuiTheme({
   typography: {
@@ -32,11 +33,10 @@ const theme = createMuiTheme({
 const RoutesComponent = () => (
   <Fragment>
     <Route exact path="/" component={MainContainer} />
+    <Route exact path="/represent" component={RepresentContainer} />
     <Route exact path="/main" component={Banner} />
     <Route exact path="/signin" component={Signin} />
     <Route exact path="/register" component={Register} />
-    <Route exact path="/header" component={Header} />
-    <Route exact path="/subheader" component={SubHeader} />
   </Fragment>
 );
 
