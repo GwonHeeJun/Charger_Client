@@ -15,17 +15,20 @@
     flex-direction: row;
     align-items: center;
 
-    a {
+    span {
+      cursor: pointer;
       svg {
         width: 200px;
         height: 50px;
       }
     }
 
+
     .c-header__wrapper--list {
       margin-left: 2%;
       height: auto;
       font-weight: 400;
+      cursor: pointer;
     }
 
     svg {
