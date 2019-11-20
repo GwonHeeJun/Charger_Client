@@ -11,6 +11,7 @@ import Banner from "./components/Modals/Banner/Banner";
 import Signin from "./components/Auth/Signin/Signin";
 import Register from "./components/Auth/Register/Register";
 import Header from "./components/Header/Header";
+import SubHeader from "./components/SubHeader/SubHeader";
 
 const theme = createMuiTheme({
   typography: {
@@ -35,6 +36,7 @@ const RoutesComponent = () => (
     <Route exact path="/signin" component={Signin} />
     <Route exact path="/register" component={Register} />
     <Route exact path="/header" component={Header} />
+    <Route exact path="/subheader" component={SubHeader} />
   </Fragment>
 );
 
