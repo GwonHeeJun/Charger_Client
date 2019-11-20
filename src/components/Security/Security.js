@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ReactComponent as Logo } from "../../assets/sample.logo.svg";
+import { ReactComponent as Logo } from "../../assets/Charger.svg";
 import { Redirect } from "react-router-dom";
 import "./Security.scss";
 import SecurituBody from "./SecurityBody/SecurityBody";
@@ -48,7 +48,7 @@ class Security extends Component {
                 width="100%"
               >
                 <tr>
-                  <Logo />
+                  <Logo style={{width: "200px",height: "50px"}}/>
                   <td align="right" valign="middle">
                     <p class="category">보안 검사</p>
                   </td>
