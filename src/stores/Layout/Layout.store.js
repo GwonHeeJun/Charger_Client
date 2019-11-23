@@ -1,9 +1,11 @@
 export const DEFAULT_ACTION = "DEFAULT_ACTION";
 export const CHANGE_MENU = "CHANGE_MENU";
+export const CHANGE_PROFILE = "CHANGE_PROFILE";
 
 const initialState = {
   actions: "default",
-  menu: "main"
+  menu: "main",
+  profile: "activity"
 };
 
 /*********************************************
@@ -16,6 +18,9 @@ const initialState = {
  *           customer - 고객 센터
  *           signin   - 로그인 화면
  *           register - 회원기입 화면
+ * 
+ * profile : activity   - 나의 활동
+ *           management - 개인정보 관리
  *
  *********************************************/
 
@@ -30,6 +35,11 @@ export default function reducer(state = initialState, action = {}) {
       return {
         ...state,
         menu: action.payload.menu
+      }
+    case CHANGE_PROFILE:
+      return {
+        ...state,
+        profile: action.payload.profile
       }
     default:
       return state;
@@ -47,5 +57,12 @@ export const changeMenu = menu => ({
   type: CHANGE_MENU,
   payload: {
     menu
+  }
+});
+
+export const changeProfile = profile => ({
+  type: CHANGE_PROFILE,
+  payload: {
+    profile
   }
 });
