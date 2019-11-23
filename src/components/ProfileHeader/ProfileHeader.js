@@ -1,15 +1,13 @@
 import React, { Component } from "react";
-import { connect } from 'react-redux';
-import { changeProfile } from '../../stores/Layout/Layout.store'
+import { connect } from "react-redux";
+import { changeProfile } from "../../stores/Layout/Layout.store";
 import "./ProfileHeader.scss";
 
 class ProfileHeader extends Component {
   constructor(props) {
     super(props);
-  
-    this.state = {
 
-    }
+    this.state = {};
 
     this.onClickChangeProfile = this.onClickChangeProfile.bind();
   }
@@ -18,22 +16,36 @@ class ProfileHeader extends Component {
     const { changeProfile } = this.props;
     e.stopPropagation();
 
-    changeProfile(profile)
-  }
+    changeProfile(profile);
+  };
   render() {
     const { profile } = this.props;
-    console.log(profile)
+    console.log(profile);
     return (
       <nav className="c-myheader">
         <div className="c-myheader__wrapper">
           <h1 className="c-myheader__wrapper--pagetitle">마이페이지</h1>
           <div className="c-myheader__wrapper--list">
-              <span className={profile === "activity" ? "c-myheader__wrapper--list__item-active" : "c-myheader__wrapper--list__item" }  onClick={e => this.onClickChangeProfile(e, "activity")}>
-                나의 활동
-              </span>
-              <span className={profile === "management" ? "c-myheader__wrapper--list__item-active" : "c-myheader__wrapper--list__item" }  onClick={e => this.onClickChangeProfile(e, "management")}>  
-                개인정보 관리
-              </span>
+            <span
+              className={
+                profile === "activity"
+                  ? "c-myheader__wrapper--list__item-active"
+                  : "c-myheader__wrapper--list__item"
+              }
+              onClick={e => this.onClickChangeProfile(e, "activity")}
+            >
+              나의 활동
+            </span>
+            <span
+              className={
+                profile === "management"
+                  ? "c-myheader__wrapper--list__item-active"
+                  : "c-myheader__wrapper--list__item"
+              }
+              onClick={e => this.onClickChangeProfile(e, "management")}
+            >
+              개인정보 관리
+            </span>
           </div>
         </div>
       </nav>
@@ -41,20 +53,16 @@ class ProfileHeader extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     profile: state.layout.profile
-  }
-}
+  };
+};
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    changeProfile: (profile) => dispatch(changeProfile(profile))
-  }
-}
+    changeProfile: profile => dispatch(changeProfile(profile))
+  };
+};
 
-export default connect( 
-  mapStateToProps,
-  mapDispatchToProps
-)(ProfileHeader)
-
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileHeader);
