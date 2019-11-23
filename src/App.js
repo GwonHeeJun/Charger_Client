@@ -6,13 +6,7 @@ import { Provider } from "react-redux";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
 // 컨테이너 모듈
-import MainContainer from './containers/MainContainer/MainContainer';
-import Banner from "./components/Modals/Banner/Banner";
 import RepresentContainer from "./containers/RepresentContainer/RepresentContainer";
-import MyPage from "./containers/MyPage/MyPage";
-import RegisterContainer from "./stores/RegisterContainer/RegisterContainer";
-import SigninContainer from "./containers/SigninContainer/SigninContainer";
-import CharginContainer from "./containers/CharginContainer/CharginContainer";
 
 const theme = createMuiTheme({
   typography: {
