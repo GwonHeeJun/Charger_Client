@@ -8,10 +8,11 @@ import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 // 컨테이너 모듈
 import MainContainer from './containers/MainContainer/MainContainer';
 import Banner from "./components/Modals/Banner/Banner";
-import Signin from "./components/Auth/Signin/Signin";
-import Register from "./components/Auth/Register/Register";
 import RepresentContainer from "./containers/RepresentContainer/RepresentContainer";
 import MyPage from "./containers/MyPage/MyPage";
+import RegisterContainer from "./stores/RegisterContainer/RegisterContainer";
+import SigninContainer from "./containers/SigninContainer/SigninContainer";
+import CharginContainer from "./containers/CharginContainer/CharginContainer";
 
 const theme = createMuiTheme({
   typography: {
@@ -31,12 +32,13 @@ const theme = createMuiTheme({
 
 const RoutesComponent = () => (
   <Fragment>
-    <Route exact path="/" component={MainContainer} />
+    {/* <Route exact path="/" component={MainContainer} /> */}
     <Route exact path="/represent" component={RepresentContainer} />
+    {/* <Route exact path="/register" component={RegisterContainer} />
     <Route exact path="/main" component={Banner} />
-    <Route exact path="/signin" component={Signin} />
-    <Route exact path="/register" component={Register} />
-    <Route exact path="/mypage" component={MyPage} />
+    <Route exact path="/chargin" component={CharginContainer} />
+    <Route exact path="/signin" component={SigninContainer} />
+    <Route exact path="/mypage" component={MyPage} /> */}
   </Fragment>
 );
 
