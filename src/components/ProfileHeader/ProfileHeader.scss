@@ -28,43 +28,34 @@
       background-color: #ffffff;
       justify-content: center;
       position: relative;
-      
-      &__box {
-        flex-direction: row;
-        display: flex;
-        margin: 0;
-        padding: 0;
-        align-items: center;
-        justify-content: center;
-        margin-left: 2%;
-        margin-right: 2%;
+      align-items: center;
 
-        &--item {
+        &__item {
+          margin-left: 2%;
+          margin-right: 2%;
           font-size: 16px;
           font-weight: 800;
+          display: flex;
+          align-items: center;
+          height: 100%;
           color: #aeb3bb;
         }
-      }
 
-      &__box-active {
-        flex-direction: row;
-        display: flex;
-        margin: 0;
-        padding: 0;
-        align-items: center;
-        justify-content: center;
-        margin-left: 2%;
-        margin-right: 2%;
 
-        &--item {
+
+        &__item-active {
+          margin-left: 2%;
+          margin-right: 2%;
           font-size: 16px;
           font-weight: 800;
           color: #1772f8;
+          display: flex;
+          align-items: center;
+          height: 100%;
+          border-bottom: 3px solid #1772f8;
+
         }
         
-        border-bottom: 3px solid #1772f8;
-      }
-
     }
   }
 }
