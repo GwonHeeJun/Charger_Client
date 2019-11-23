@@ -1,0 +1,40 @@
+.c-introduce {
+    display: flex;
+    width: 100%;
+    min-height: 1000px;
+    height: 100%;
+
+    &__desc {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+        
+        .c-introduce__desc--text {
+            margin-left: 10%;
+            span {
+                font-size: 4rem;
+
+                span {
+                    margin-left: 240px;
+                }
+            }
+    
+            h2 {
+                margin-top: 5%;
+                margin-right: auto;
+            }
+        }
+    }
+
+    &__image {
+        display: flex;
+        align-items: center;
+        flex: 1;
+
+        svg {
+            width: 90%;
+        }
+    }
+}
