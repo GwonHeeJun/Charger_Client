@@ -28,6 +28,10 @@
       height: auto;
       font-weight: 400;
       cursor: pointer;
+
+      a {
+        color: black;
+      }
     }
 
     svg {
@@ -35,7 +39,7 @@
       margin-right: 24px;
     }
 
-    .c-header__wrapper--signup {
+    .c-header__wrapper--auth {
       border-radius: 3px;
       border: 0.8px solid gray;
       font-size: 12px;
@@ -43,16 +47,15 @@
       color: gray;
       padding: 3px 6px;
       margin-right: 8px;
+        color: gray;
     }
 
-    .c-header__wrapper--signin {
-      border-radius: 3px;
-      border: 0.8px solid gray;
-      font-size: 12px;
-      font-weight: 550;
-      color: gray;
-      padding: 3px 5px;
-      margin-right: 8px;
-    }
   }
+}
+
+.svg-inline--fa {
+  margin-left: 0px;
+  padding-left: 15px;
+  width: 20px;
+  height: 20px;
 }
