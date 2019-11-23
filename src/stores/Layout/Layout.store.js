@@ -1,11 +1,13 @@
 export const DEFAULT_ACTION = "DEFAULT_ACTION";
 export const CHANGE_MENU = "CHANGE_MENU";
 export const CHANGE_PROFILE = "CHANGE_PROFILE";
+export const IS_LOGINED = "IS_LOGINED";
 
 const initialState = {
   actions: "default",
   menu: "main",
-  profile: "activity"
+  profile: "activity",
+  logined : false
 };
 
 /*********************************************
@@ -21,6 +23,9 @@ const initialState = {
  * 
  * profile : activity   - 나의 활동
  *           management - 개인정보 관리
+ * 
+ * logined : true       - 로그안 맞음
+ *           false      - 로그인 아님
  *
  *********************************************/
 
@@ -40,6 +45,11 @@ export default function reducer(state = initialState, action = {}) {
       return {
         ...state,
         profile: action.payload.profile
+      }
+    case IS_LOGINED:
+      return {
+        ...state,
+        logined : action.payload.logined
       }
     default:
       return state;
@@ -66,3 +76,10 @@ export const changeProfile = profile => ({
     profile
   }
 });
+
+export const isLogined = logined => ({
+  type: IS_LOGINED,
+  payload: {
+    logined
+  }
+})
