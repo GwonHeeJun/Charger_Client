@@ -1,0 +1,93 @@
+.c-profiledesc {
+    width: 100%;
+    height: 500px;
+    background-color: #F8F8F9;
+    border-bottom: 1px solid #c9ccd2;
+    
+    &__wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .c-profiledesc__wrapper--userbox {
+            width: 1030px;
+            height: 298px;
+            padding: 32px;
+            background-color: #FFFFFF;
+            border-top: 2px solid #03308F;
+
+            &__greeting {
+                width: 964px;
+                height: 41px;
+
+                .c-profiledesc__wrapper--userbox__greeting--customer {
+                    color: #18191C;
+                    font-size: 28px;
+                }
+
+                .c-profiledesc__wrapper--userbox__greeting--withcharger {
+                    color: #79818F;
+                    margin-left: 5px;
+                }
+            }
+
+            &__infowrapper {
+                margin-top: 29px;
+                display: flex;
+                
+                &--myprofile {
+                    width: auto;
+                    height: 100%;
+                    padding: 10px;
+
+                    &__userinfo {
+                        width: 470px;
+                        height: 50px;
+                        border-bottom: 1px solid #e4e5e8;
+                        display: flex;
+                        align-items: center;
+        
+                        &--email {
+                            width: 118px;
+                            color: #79818F;
+                        }
+        
+                        &--name {
+                            width: 118px;
+                            color: #79818F;
+                        }
+        
+                        &--phone {
+                            width: 118px;
+                            color: #79818F;
+                        }
+                    }
+
+                }
+
+                &--remainbox {
+                    width: 470px;
+                    height: 173px;
+                    padding: 5px;
+                    display: flex;
+                    align-items: center;
+
+                    &__desc {
+                        font-size: 38px;
+                        font-weight: 500;
+                        margin-left: 10%;
+                    }
+
+                    &__elec {
+                        font-size: 20px;
+                        font-weight: 350;
+                        margin-left: 5%;
+                    }
+                }
+
+            }
+        }
+    }
+}

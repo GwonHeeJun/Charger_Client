@@ -7,6 +7,7 @@ import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
 // 컨테이너 모듈
 import RepresentContainer from "./containers/RepresentContainer/RepresentContainer";
+import MyPage from "./containers/MyPage/MyPage";
 
 const theme = createMuiTheme({
   typography: {
@@ -31,8 +32,8 @@ const RoutesComponent = () => (
     {/* <Route exact path="/register" component={RegisterContainer} />
     <Route exact path="/main" component={Banner} />
     <Route exact path="/chargin" component={CharginContainer} />
-    <Route exact path="/signin" component={SigninContainer} />
-    <Route exact path="/mypage" component={MyPage} /> */}
+    <Route exact path="/signin" component={SigninContainer} />*/}
+    <Route exact path="/mypage" component={MyPage} />
   </Fragment>
 );
 
