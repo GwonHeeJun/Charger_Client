@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link, Redirect } from "react-router-dom";
 import { isLogined, changeMenu } from "../../../stores/Layout/Layout.store";
 import { connect } from "react-redux";
 
