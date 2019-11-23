@@ -11,6 +11,7 @@ import Banner from "./components/Modals/Banner/Banner";
 import Signin from "./components/Auth/Signin/Signin";
 import Register from "./components/Auth/Register/Register";
 import RepresentContainer from "./containers/RepresentContainer/RepresentContainer";
+import MyPage from "./containers/MyPage/MyPage";
 
 const theme = createMuiTheme({
   typography: {
@@ -35,6 +36,7 @@ const RoutesComponent = () => (
     <Route exact path="/main" component={Banner} />
     <Route exact path="/signin" component={Signin} />
     <Route exact path="/register" component={Register} />
+    <Route exact path="/mypage" component={MyPage} />
   </Fragment>
 );
 
