@@ -1,18 +1,53 @@
-import React, { Component } from 'react'
-import "./RepresentContainer.scss";
-import SubHeader from '../../components/SubHeader/SubHeader';
-import TemplateContainer from '../TemplateContainer/TemplateContainer';
+import React, { Component } from "react";
+import SubHeader from "../../components/SubHeader/SubHeader";
+import TemplateContainer from "../TemplateContainer/TemplateContainer";
+import Introduce from "../../components/Introduce/Introduce";
+import { connect } from "react-redux";
+import Chargin from "../../components/Charge/Charge";
+import Signin from "../../components/Auth/Signin/Signin";
+import Register from "../../components/Auth/Register/Register";
 
 class RepresentContainer extends Component {
-    render() {
+  onChangePage = menu => {
+    switch (menu) {
+      case "main":
         return (
-            <div className="represent-container">
-                <TemplateContainer>
-                    <SubHeader />
-                </TemplateContainer>
-            </div>
+          <>
+            <SubHeader />
+            <Introduce />
+            <Introduce color="blue" />
+          </>
         )
+      case "chargin":
+          return (
+            <Chargin />
+          )
+      case "exchange":
+        break;
+      case "customer":
+        break;
+      case "signin":
+        return <Signin />
+      case "register":
+        return <Register />
+      default:
+        return false;
     }
-}
+  };
 
-export default RepresentContainer
+  render() {
+    const { menu } = this.props;
+    return (
+        <TemplateContainer>
+            {this.onChangePage(menu)}
+        </TemplateContainer>
+    );
+  }
+}
+const mapStateToProps = state => {
+  return {
+    menu: state.layout.menu
+  };
+};
+
+export default connect(mapStateToProps, null)(RepresentContainer);
