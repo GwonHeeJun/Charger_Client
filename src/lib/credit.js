@@ -52,3 +52,21 @@ export const PostNewSale = ({ selling_elec, selling_price, token }) =>
       }
     }
   );
+
+export const GetPrice = ({ token, electricity }) => 
+axios.post(Default_URL + "api/trade/price", {
+  electricity
+},{
+  headers: {
+    token
+  }
+})
+
+export const Trade = ({ token, trading_elec }) => 
+axios.post(Default_URL + "api/trade", {
+  trading_elec
+},{
+  headers: {
+    token
+  }
+})
