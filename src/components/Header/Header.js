@@ -50,12 +50,12 @@ export class Header extends Component {
           >
             충전소
           </span>
-          <span
+          {/* <span
             className="c-header__wrapper--list"
             onClick={e => this.onClickChangeMenu(e, "customer")}
           >
             고객센터
-          </span>
+          </span> */}
           <Notification />
           {localStorage.getItem("charger-token") !== null || logined === true ? (
               <>
