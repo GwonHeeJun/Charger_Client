@@ -1,0 +1,89 @@
+.apexcharts-title-text {
+    display: none;
+}
+
+.c-trade-market {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 1200px;
+
+    &__bottom {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        border-top: 1px solid #e4e5e8;
+
+        .c-trade-market__bottom--seller {
+            display: flex;
+            width: 100%;
+            height: 50%;
+            border-bottom: 1px solid #e4e5e8;
+
+            &__sell {
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+                align-items: center;
+                border-right: 1px solid #e4e5e8;
+                
+                
+            }
+
+            &__buy {
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+                align-items: center;
+            }
+        }
+
+        .c-trade-market__bottom--trade-list {
+            display: flex;
+            justify-content: center;
+            padding-top: 20px;
+            flex-direction: column;
+            align-items: center;
+
+            span {
+                margin-right: auto;
+                margin-left: 10%;
+                font-weight: 700;
+                color: #18191c;
+                margin-bottom: 14px;
+            }
+
+            &__type {
+                display: flex;
+                justify-content: center;
+                width: 90%;
+                border-bottom: 3px solid gray;
+
+                span {
+                    display: flex;
+                    align-items: center;
+                    flex: 1;
+                    font-size: 13px;
+                    color: #333333;
+                    justify-content: center;
+                }
+            }
+
+            &__list {
+                display: flex;
+                justify-content: center;
+                width: 90%;
+                margin-top: 10px;
+                span {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex: 1;
+                    font-size: 13px;
+                    color: #333333;
+                }
+            }
+        }
+    }
+}
