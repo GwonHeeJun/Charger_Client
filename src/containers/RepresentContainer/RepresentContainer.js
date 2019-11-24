@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import Chargin from "../../components/Charge/Charge";
 import Signin from "../../components/Auth/Signin/Signin";
 import Register from "../../components/Auth/Register/Register";
+import TradeMarket from "../../components/TradeMarket/TradeMarket";
 
 class RepresentContainer extends Component {
   onChangePage = menu => {
@@ -23,7 +24,9 @@ class RepresentContainer extends Component {
             <Chargin />
           )
       case "exchange":
-        break;
+            return (
+              <TradeMarket />
+            )
       case "customer":
         break;
       case "signin":
