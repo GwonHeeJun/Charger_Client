@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import TemplateContainer from "../TemplateContainer/TemplateContainer";
 import ProfileHeader from "../../components/ProfileHeader/ProfileHeader";
 import ProfileDescription from "../../components/ProfileDescription/ProfileDescription";
+import MyWallet from "../../components/MyWallet/MyWallet";
 
 class MyPage extends Component {
     render() {
@@ -9,6 +10,7 @@ class MyPage extends Component {
                 <TemplateContainer>
                     <ProfileHeader />
                     <ProfileDescription />
+                    <MyWallet />
                 </TemplateContainer>
         )
     }
