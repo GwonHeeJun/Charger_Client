@@ -10,6 +10,7 @@ class TradeMarket extends Component {
     super(props);
 
     this.state = {
+      priceSellKW: 0,
       completeBuy: [],
       buyKw: 0,
       sellKw: 0,
@@ -273,26 +274,30 @@ class TradeMarket extends Component {
     };
   }
 
-  onChangeBuy = e => {
+  onChange = e => {
     const { name, value } = e.target;
     this.setState({
       [name]: value
-    });
-    this.setState({
-      priceBuy: value * 750
     });
     console.log(value);
   };
 
-  onChangeSell = e => {
+  onChangeBuy = e => {
     const { name, value } = e.target;
+    e.preventDefault();
+
     this.setState({
       [name]: value
     });
-    this.setState({
-      priceSell: value * 750
-    });
-    console.log(value);
+    Credit.GetPrice({
+        token : localStorage.getItem('charger-token'),
+        electricity: value
+    }).then(res => {
+        console.log(res.data.price)
+        this.setState({
+            priceBuy: res.data.price
+        })
+    })
   };
 
   onSubmitSale = e => {
@@ -300,7 +305,7 @@ class TradeMarket extends Component {
 
     Credit.PostNewSale({
       selling_elec: this.state.sellKw,
-      selling_price: 750,
+      selling_price: this.state.priceSellKW,
       token: localStorage.getItem("charger-token")
     }).then(res => {
       console.log(res);
@@ -309,6 +314,13 @@ class TradeMarket extends Component {
 
   onSubmitBuy = e => {
     e.preventDefault();
+
+    Credit.Trade({
+      token: localStorage.getItem("charger-token"),
+      trading_elec: this.state.buyKw
+    }).then(res => {
+        console.log(res)
+    })
   };
 
   componentDidMount() {
@@ -380,7 +392,20 @@ class TradeMarket extends Component {
                   name="sellKw"
                   type="text"
                   value={this.state.sellKw}
-                  onChange={this.onChangeSell}
+                  onChange={this.onChange}
+                  autoComplete="current-password"
+                  margin="normal"
+                  variant="outlined"
+                  helperText="판매하실 전력을 입력해주세요"
+                  style={{ width: "90%" }}
+                />
+                <TextField
+                  id="outlined-password-input"
+                  label="1 KW 당 가격"
+                  name="priceSellKW"
+                  type="text"
+                  value={this.state.priceSellKW}
+                  onChange={this.onChange}
                   autoComplete="current-password"
                   margin="normal"
                   variant="outlined"
@@ -393,7 +418,7 @@ class TradeMarket extends Component {
                   label="금액"
                   name="phone"
                   type="text"
-                  value={this.state.priceSell}
+                  value={this.state.priceSellKW * this.state.sellKw} 
                   autoComplete="current-password"
                   margin="normal"
                   variant="outlined"
@@ -406,27 +431,25 @@ class TradeMarket extends Component {
                   style={{ width: "90%", marginTop: "20px" }}
                   type="submit"
                 >
-                  구매하기
+                  판매하기
                 </Button>
               </form>
             </div>
           </div>
           <div className="c-trade-market__bottom--trade-list">
-            <span>최근 체결 내역</span>
+            <span>최근 판매 목록</span>
             <div className="c-trade-market__bottom--trade-list__type">
               <span>번호</span>
-              <span>시간</span>
-              <span>판매 / 구매</span>
-              <span>금액</span>
+              <span>총 금액</span>
+              <span>KW 당 가격</span>
               <span>주고 받은 전력량</span>
             </div>
             {this.state.completeBuy.map((item, idx) => {
               return (
                 <div className="c-trade-market__bottom--trade-list__list">
                   <span>{idx + 1}</span>
-                  <span>{item.created_at}</span>
-                  <span>판매</span>
                   <span>{item.selling_elec * item.selling_price}</span>
+                  <span>{item.selling_price}</span>
                   <span>{item.selling_elec} KW</span>
                 </div>
               );

@@ -27,8 +27,6 @@ class RepresentContainer extends Component {
             return (
               <TradeMarket />
             )
-      case "customer":
-        break;
       case "signin":
         return <Signin />
       case "register":
