@@ -63,6 +63,9 @@ export class Header extends Component {
                   src="https://image-public.coinone.co.kr/profile/img_profile.svg"
                   width="35"
                   alt="user"
+                  style={{
+                    cursor: "pointer"
+                  }}
                 />
                 <Signout onClick={() => {
                   this.onClickUserLogout(false)
@@ -70,7 +73,8 @@ export class Header extends Component {
                   this.setState({
                     count: this.state.count + 1
                   })
-                }} />
+                }} 
+                />
               </>
             ) : (
             <>
