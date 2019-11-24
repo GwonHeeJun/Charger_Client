@@ -47,14 +47,25 @@ class ProfileDescription extends Component {
               </div>
 
               <div className="c-profiledesc__wrapper--userbox__infowrapper--remainbox">
-                <span className="c-profiledesc__wrapper--userbox__infowrapper--remainbox__desc">
-                  남은 전력
-                </span>
-                <span className="c-profiledesc__wrapper--userbox__infowrapper--remainbox__elec">
+                <div className="c-mywallet__wrapper--userbox__infowrapper--remainbox__item" style={{marginBottom: "15px"}}>
+                  <span className="c-profiledesc__wrapper--userbox__infowrapper--remainbox__item--desc">
+                    현재 잔액
+                  </span>
+                  <span className="c-profiledesc__wrapper--userbox__infowrapper--remainbox__item--elec">
+                    10,000원
+                  </span>
+                </div>
+
+                <div className="c-mywallet__wrapper--userbox__infowrapper--remainbox__item">
+                  <span className="c-profiledesc__wrapper--userbox__infowrapper--remainbox__item--desc">
+                    남은 전력
+                  </span>
+                  <span className="c-profiledesc__wrapper--userbox__infowrapper--remainbox__item--elec">
                     100kW
-                </span>
+                  </span>
+                </div>
               </div>
-               
+            
             </div>
           </div>
         </div>
