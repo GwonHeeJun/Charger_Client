@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { changeMenu, isLogined } from "../../stores/Layout/Layout.store";
 import { ReactComponent as Signout } from "../../assets/Signout.svg";
 import * as User from '../../lib/auth';
-// import { React} from '../../assets/lighting.svg'
+import { ReactComponent as Profile} from '../../assets/profile.svg'
 import "./Header.scss";
 
 export class Header extends Component {
@@ -85,12 +85,14 @@ export class Header extends Component {
                   <span style={{fontSize: "15px"}}>보유 전력 : <small>{this.state.elec} KW</small></span>
                   <span style={{fontSize: "15px"}}>보유 잔액 : <small>{this.state.money} 원</small></span>
                 </div>
-                <img
-                  src="https://image-public.coinone.co.kr/profile/img_profile.svg"
-                  width="35"
+                <Profile
+                  // src="https://image-public.coinone.co.kr/profile/img_profile.svg"
+                  // width="35"
                   alt="user"
                   onClick={e => this.onClickChangeMenu(e, "profile")}
                   style={{
+                    marginLeft: 0,
+                    marginRight: 0,
                     cursor: "pointer"
                   }}
                 />
