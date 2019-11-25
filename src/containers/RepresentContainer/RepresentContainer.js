@@ -17,7 +17,7 @@ class RepresentContainer extends Component {
           <>
             <SubHeader />
             <Introduce />
-            <Introduce color="blue" />
+            {/* <Introduce color="blue" /> */}
           </>
         );
       case "chargin":
