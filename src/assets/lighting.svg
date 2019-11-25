@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="35" viewBox="-1.5 -1.5 35 35">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="32" height="32"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#clip-path)">
+    <image id="레이어_1" data-name="레이어 1" x="7" width="18" height="32" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAgCAYAAAAffCjxAAAD/ElEQVRIiZ3VbUxbVRgH8P85597ewvoC1dKtFAaDIBsxcQzNwsZmpt/5OGPMotFo/GKifCCZZpmJMVPRZJu4JUuMJhqySTRu05gsG2RAAIHNTSELMl622tFSentpgb7de0xvKaO1LW7Pt3vO7e8+z/nftgQPi9Tv3N+jqvQg5xyblVEiYBp/59ZE3+nkrUL6foulofQJC6/77L0ILCYO5LMIwDWCjm8E7fIg7qWX16El1eRyObi5qUGDWMwBLQ/EgEUfxYyHzC56vD3/gQSIzq1PqluYwIE48ndEgd4RAXfd9CIwtbRheQ0StIryMkaooQBCADUKXBsiiX9k/nOWn6oSK2rKy/LN83Cs+w8Yfp/gdxB2D+WErBKr1aFCgVHg+ijD7Dx+BGYjuSAiSmqNsxBEgPgq0DNMo/6gdjHHMwCY6202M8ps1gKxM2BqjmF0kt/AStGt7O1UaprF5XTAUmws/P70joiY85JuoDeRE2KcOrfZ+BajlAeiwEoomRbCITl2FWgwpLcaGgC73a7pkCTSim1llJDkdiw35PFReAIoanpaugQi6csSA8JRQr3eWL8OlVhZratMzTMTgARQVa7h0ukYA0eFPoXIMTlN0dZhiLmX0a1DJqNW63IUjl5ggK1k7T1jQDAAnPxe0O661TaPe1CHiCRgh9OhrY+hg7lQLYWsLgMfnjHiyiD93Dff92XqsE3N9lIz3yqJwPJy8jsAMMZhNOSACKCpwKnvjLhwhZ/3zQc+WO+4zhk3Kcti6OV2g0iIhkgcwoHdsJx4NwrGNnRGUt18223AmW7esxqOvgWMr0dDJydHZjxeZXffULz6+qCv+vYMPnU5CJiUNZ4A/Noj4pOvyZ0lOfqqLI8pyNwGX1gYD6cXauyOFw80JTIRERj9g+H4WcG7FIq/Istj95BVQsalqWVXfZXW9FRVQj+r9KOmZxnePyWsTM3hDdk/PJYrVbrxwlKEF5obYSo2r40lALJMcfSkwG9MkjbZ3385F4Ksjki5jbfub1RTCAUiq8DH5wy4dhMn/A8GzuZDMjsy76urrdSe3bUjdT7JP5Kvuozo+o38sHA/eLwQkgGZiuih5meIxZT8KSFA1y8GdJ7HQFhRMmLeFHJY1NaWPaqe0NUBER+dI38v+mNHFOVPeTNkHbJa99TUVfK9jTsTGL/NcKyT+QMB9YiijEz/HwTpw9ZE6dDBJmJVQgTtX4iRiVnyZtA3PLT5x7M6qrSjtb5aw7FOkQ+Nk/agr/+nR0H0cmx/rrpl777Aa4dbeMX25o5HBtIdlRgNz4dWxNK+m9oFi0k5+riQIFDtpXg8PhxZCb495d485rwdcYq/ovHY6273eOBxEQD4FwYXi3erc+VJAAAAAElFTkSuQmCC"/>
+  </g>
+</svg>
