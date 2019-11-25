@@ -44,7 +44,7 @@ class ProfileHeader extends Component {
               }
               onClick={e => this.onClickChangeProfile(e, "management")}
             >
-              개인정보 관리
+              거래소 거래 내역
             </span>
           </div>
         </div>
