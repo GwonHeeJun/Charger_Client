@@ -17,10 +17,9 @@
             border-bottom: 1px solid #aeb3bb;
         }
 
-        .c-mywallet__wrapper--trade {
-            display: flex;
-            flex-direction: column;
+        span {
+            cursor: pointer;
+        }
 
-            }
         }   
     }
