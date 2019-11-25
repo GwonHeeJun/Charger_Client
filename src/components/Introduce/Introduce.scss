@@ -25,6 +25,19 @@
                 margin-top: 5%;
                 margin-right: auto;
             }
+
+            button {
+                border-radius: 16px;
+                font-size: 20px;
+                background-color: #fff;
+                width: 90%;
+                height: 20%;
+
+                &:hover {
+                    background-color: #79818f;
+                    color: #fff;
+                }
+            }
         }
     }
 
