@@ -1,0 +1,6 @@
+<svg class="icon" xmlns="http://www.w3.org/2000/svg" width="10" height="12" viewBox="0 0 10 12">
+    <g fill="none" fill-rule="nonzero" stroke="#FF8031">
+        <rect width="4.5" height="8.5" x="2.75" y=".75" stroke-width="1.5" rx="2.25"></rect>
+        <rect class="fill" width="9" height="7" x=".5" y="4.5" fill="#FF8031" rx="1"></rect>
+    </g>
+</svg>
