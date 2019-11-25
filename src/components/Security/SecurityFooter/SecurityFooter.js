@@ -8,19 +8,19 @@ class SecurityFooter extends Component {
       <React.Fragment>
         <tr>
           <td class="content_wrapper">
-            <h2>코인원 팀 드림</h2>
+            <h2>Charger 팀 드림</h2>
             <h5 class="footer_slogan">
-              The Future of Finance, Coinone
+              The Electric Future, Charger
               <br />
-              <Link to="#">https://coinone.co.kr</Link>
+              <Link to="#">https://domain.co.kr</Link>
             </h5>
           </td>
         </tr>
         <tr>
           <td class="footer_wrapper">
             <address>
-              <b>(주)코인원</b> | 서울특별시 영등포구 국제금융로 10 Three IFC
-              19층 | 대표 차명훈
+              <b>(팀)Charger</b> | 광주광역시 광산구 상무대로 312
+              | 대표 권희준
               <br />
               고객센터
               <Link to="#" title="새 창으로 열기">
