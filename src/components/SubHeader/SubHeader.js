@@ -56,12 +56,7 @@ class SubHeader extends Component {
   render() {
     return (
       <div className="c-subheader">
-        <div className="c-subheader__title">
-          <div className="c-subheader__title--trade">
-            <small>24시간 거래량(원)</small>
-            <span>00,000백만</span>
-          </div>
-        </div>
+
         <div className="c-subheader__content">
           <div className="c-subheader__content--header">
             <span>최근 24시간 기준</span>
@@ -75,9 +70,8 @@ class SubHeader extends Component {
                     <small>전력</small>
                   </span>
                   <span id="price">
-                    0,000,000<small>0.00%</small>
+                    KW당 600<small>2.00%</small>
                   </span>
-                  <span id="sell">VOL.00,000백만</span>
                   <span id="type">Main</span>
                 </div>
                 <div className="c-subheader__content--main__box--desc__content">
