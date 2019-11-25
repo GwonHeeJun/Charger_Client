@@ -28,12 +28,11 @@ const theme = createMuiTheme({
 const RoutesComponent = () => (
   <Fragment>
     {/* <Route exact path="/" component={MainContainer} /> */}
-    <Route exact path="/represent" component={RepresentContainer} />
+    <Route exact path="/" component={RepresentContainer} />
     {/* <Route exact path="/register" component={RegisterContainer} />
     <Route exact path="/main" component={Banner} />
     <Route exact path="/chargin" component={CharginContainer} />
     <Route exact path="/signin" component={SigninContainer} />*/}
-    <Route exact path="/mypage" component={MyPage} />
   </Fragment>
 );
 
