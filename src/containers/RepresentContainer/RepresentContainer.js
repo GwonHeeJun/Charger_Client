@@ -7,6 +7,7 @@ import Chargin from "../../components/Charge/Charge";
 import Signin from "../../components/Auth/Signin/Signin";
 import Register from "../../components/Auth/Register/Register";
 import TradeMarket from "../../components/TradeMarket/TradeMarket";
+import MyPage from '../MyPage/MyPage';
 
 class RepresentContainer extends Component {
   onChangePage = menu => {
@@ -18,19 +19,17 @@ class RepresentContainer extends Component {
             <Introduce />
             <Introduce color="blue" />
           </>
-        )
+        );
       case "chargin":
-          return (
-            <Chargin />
-          )
+        return <Chargin />;
       case "exchange":
-            return (
-              <TradeMarket />
-            )
+        return <TradeMarket />;
+      case "profile":
+        return <MyPage />;
       case "signin":
-        return <Signin />
+        return <Signin />;
       case "register":
-        return <Register />
+        return <Register />;
       default:
         return false;
     }
@@ -38,11 +37,7 @@ class RepresentContainer extends Component {
 
   render() {
     const { menu } = this.props;
-    return (
-        <TemplateContainer>
-            {this.onChangePage(menu)}
-        </TemplateContainer>
-    );
+    return <TemplateContainer>{this.onChangePage(menu)}</TemplateContainer>;
   }
 }
 const mapStateToProps = state => {
