@@ -1,9 +1,25 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { changeMenu } from "../../stores/Layout/Layout.store";
 import { ReactComponent as PayOnline } from "../../assets/payOnline.svg";
 import "./Introduce.scss";
 
 class Introduce extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {};
+  }
+
+  onClickChangeMenu = (e, menu) => {
+    const { changeMenu } = this.props;
+    e.stopPropagation();
+
+    changeMenu(menu);
+  };
+
   render() {
+    console.log(this.props);
     return (
       <div
         className="c-introduce"
@@ -17,6 +33,9 @@ class Introduce extends Component {
               <span>빠른 전력 거래</span>
             </span>
             <h2>전력거래소 _ Charger에서 시작하세요</h2>
+            <button onClick={e => this.onClickChangeMenu(e, "register")}>
+              지금 가입하기
+            </button>
           </div>
         </div>
         <div className="c-introduce__image">
@@ -27,4 +46,10 @@ class Introduce extends Component {
   }
 }
 
-export default Introduce;
+const mapDispatchToProps = dispatch => {
+  return {
+    changeMenu: menu => dispatch(changeMenu(menu))
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Introduce);
