@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { isLogined, changeMenu } from "../../../stores/Layout/Layout.store";
 import { connect } from "react-redux";
-
+import { ReactComponent as Lock } from "../../../assets/lock.svg";
 import * as Auth from "../../../lib/auth";
 import "./Signin.scss";
 
@@ -18,13 +18,13 @@ class Signin extends Component {
     this.onSubmitLogin = this.onSubmitLogin.bind();
   }
 
-  onSubmitLogin = (logined) => {
+  onSubmitLogin = logined => {
     const { isLogined } = this.props;
 
     isLogined(logined);
   };
 
-  onClickChangeMenu = (menu) => {
+  onClickChangeMenu = menu => {
     const { changeMenu } = this.props;
 
     changeMenu(menu);
@@ -46,8 +46,8 @@ class Signin extends Component {
       .then(result => {
         console.log(result);
         localStorage.setItem("charger-token", result.data.token);
-        this.onClickChangeMenu('main')
-        this.onSubmitLogin(true)
+        this.onClickChangeMenu("main");
+        this.onSubmitLogin(true);
       })
       .catch(result => {
         console.log("실패");
@@ -56,14 +56,19 @@ class Signin extends Component {
 
   render() {
     console.log(this.props);
-    
 
     return (
       <div className="c-signin">
         <div className="c-signin__wrapper">
           <h1>로그인</h1>
           <p>고객님의 소중한 정보를 위해 주소창을 체크해주세요</p>
-          <div className="c-signin__wrapper--info"></div>
+          <div className="c-signin__wrapper--info">
+            <div className="c-signin__wrapper--info__wrapper">
+              <Lock />
+              <span>https://domain.co.kr</span>
+              <strong>자물쇠를 확인해주세요.</strong>
+            </div>
+          </div>
           <form onSubmit={this.onSubmit}>
             <input
               name="id"
@@ -85,15 +90,17 @@ class Signin extends Component {
             <span className="c-signin__wrapper--desc__findpw">
               비밀번호 찾기
             </span>
-            <span className="c-signin__wrapper--desc__regist"
-            onClick={() => this.onClickChangeMenu("register")}>
+            <span
+              className="c-signin__wrapper--desc__regist"
+              onClick={() => this.onClickChangeMenu("register")}
+            >
               회원가입
             </span>
           </div>
         </div>
-        <span className="c-signin__lock">
+        {/* <span className="c-signin__lock">
           혹시 해킹이 의심되는 상황인가요? 계정 잠금 >
-        </span>
+        </span> */}
       </div>
     );
   }
