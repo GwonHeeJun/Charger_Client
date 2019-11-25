@@ -26,7 +26,12 @@ class Security extends Component {
 
   render() {
     if (this.state.redirect === true) {
+      localStorage.setItem('is_checked', 'safe_ip')
       return <Redirect to="/main" />;
+    }
+
+    if (localStorage.getItem('is_checked')) {
+      return <Redirect to="/main" />
     }
 
     return (
