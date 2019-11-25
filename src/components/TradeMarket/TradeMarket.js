@@ -10,6 +10,7 @@ class TradeMarket extends Component {
     super(props);
 
     this.state = {
+      count : 0,
       priceSellKW: 0,
       completeBuy: [],
       buyKw: 0,
@@ -309,6 +310,10 @@ class TradeMarket extends Component {
       token: localStorage.getItem("charger-token")
     }).then(res => {
       console.log(res);
+      this.setState({
+        count : this.state.count + 1
+      })
+      alert("판매가 등록되었습니다.")
     });
   };
 
@@ -320,6 +325,10 @@ class TradeMarket extends Component {
       trading_elec: this.state.buyKw
     }).then(res => {
         console.log(res)
+        this.setState({
+          count : this.state.count + 1
+        })
+        alert("구매가 완료되었습니다.")
     })
   };
 
@@ -330,6 +339,7 @@ class TradeMarket extends Component {
       this.setState({
         completeBuy: res.data.sale_list
       });
+      
     });
   }
 
