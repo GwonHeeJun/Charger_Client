@@ -3,16 +3,32 @@ import TemplateContainer from "../TemplateContainer/TemplateContainer";
 import ProfileHeader from "../../components/ProfileHeader/ProfileHeader";
 import ProfileDescription from "../../components/ProfileDescription/ProfileDescription";
 import MyWallet from "../../components/MyWallet/MyWallet";
+import { connect } from "react-redux";
+import MarketHistory from "../../components/MarketHistory/MarketHistory";
 
 class MyPage extends Component {
-    render() {
-        return (
-                <TemplateContainer>
-                    <ProfileHeader />
-                    <ProfileDescription />
-                    <MyWallet />
-                </TemplateContainer>
-        )
-    }
+  render() {
+    const { profile } = this.props;
+    return (
+      <>
+        <ProfileHeader />
+        {profile === "activity" ? (
+          <>
+            <ProfileDescription />
+            <MyWallet />
+          </>
+        ) : (
+          <MarketHistory />
+        )}
+      </>
+    );
+  }
 }
-export default MyPage
+
+const mapStateToProps = state => {
+  return {
+    profile: state.layout.profile
+  };
+};
+
+export default connect(mapStateToProps, null)(MyPage);
