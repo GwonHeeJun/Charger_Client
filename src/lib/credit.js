@@ -70,3 +70,10 @@ axios.post(Default_URL + "api/trade", {
     token
   }
 })
+
+export const GetMarketHis = ({ token }) => 
+axios.get(Default_URL + "api/trade", {
+  headers : {
+    token
+  }
+})

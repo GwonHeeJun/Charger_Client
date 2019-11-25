@@ -17,3 +17,10 @@ export const Register = ({ id, password, name, email, phone }) =>
     id,
     password
   });
+
+  export const Check = ({ token }) => 
+  axios.get(Default_URL + "api/auth/", {
+    headers: {
+      token
+    }
+  })
