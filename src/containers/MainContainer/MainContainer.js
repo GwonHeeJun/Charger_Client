@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./MainContainer.scss";
 import Security from "../../components/Security/Security";
 
 class MainContainer extends Component {
