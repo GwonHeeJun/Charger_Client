@@ -4,13 +4,17 @@ import { ReactComponent as Notification } from "../../assets/notification.svg";
 import { connect } from "react-redux";
 import { changeMenu, isLogined } from "../../stores/Layout/Layout.store";
 import { ReactComponent as Signout } from "../../assets/Signout.svg";
+import * as User from '../../lib/auth';
+// import { React} from '../../assets/lighting.svg'
 import "./Header.scss";
 
 export class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: 0
+      count: 0,
+      money: 0,
+      elec: 0
     };
 
     this.onClickChangeMenu = this.onClickChangeMenu.bind();
@@ -29,6 +33,18 @@ export class Header extends Component {
 
     isLogined(islogin);
   };
+
+  componentDidMount() {
+    User.Check({
+      token : localStorage.getItem('charger-token')
+    }).then(res => {
+      console.log(res)
+      this.setState({
+        money: res.data.credit,
+        elec : res.data.electricity
+      })
+    })
+  }
 
   render() {
     const { logined } = this.props;
@@ -56,13 +72,24 @@ export class Header extends Component {
           >
             고객센터
           </span> */}
-          <Notification />
+          <svg />
           {localStorage.getItem("charger-token") !== null || logined === true ? (
               <>
+                <div style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  marginRight: "20px",
+                  alignItems: "center",
+                  justifyContent: "center"
+                }}>
+                  <span style={{fontSize: "15px"}}>보유 전력 : <small>{this.state.elec} KW</small></span>
+                  <span style={{fontSize: "15px"}}>보유 잔액 : <small>{this.state.money} 원</small></span>
+                </div>
                 <img
                   src="https://image-public.coinone.co.kr/profile/img_profile.svg"
                   width="35"
                   alt="user"
+                  onClick={e => this.onClickChangeMenu(e, "profile")}
                   style={{
                     cursor: "pointer"
                   }}
