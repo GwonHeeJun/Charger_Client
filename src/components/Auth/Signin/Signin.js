@@ -59,13 +59,14 @@ class Signin extends Component {
         <div className="c-signin__wrapper">
           <h1>로그인</h1>
           <p>고객님의 소중한 정보를 위해 주소창을 체크해주세요</p>
-          <div className="c-signin__wrapper--info">
+          {/* <div className="c-signin__wrapper--info">
             <div className="c-signin__wrapper--info__wrapper">
               <Lock />
               <span>https://domain.co.kr</span>
               <strong>자물쇠를 확인해주세요.</strong>
             </div>
-          </div>
+          </div> */}
+          <div style={{marginBottom: "70px"}}/>
           <form onSubmit={this.onSubmit}>
             <input
               name="id"
@@ -85,13 +86,15 @@ class Signin extends Component {
           </form>
           <div className="c-signin__wrapper--desc">
             <span className="c-signin__wrapper--desc__findpw">
-              비밀번호 찾기
             </span>
             <span
               className="c-signin__wrapper--desc__regist"
               onClick={() => this.onClickChangeMenu("register")}
+              style={{cursor: "pointer"}}
             >
-              회원가입
+              <span style={{
+                color: "black"
+              }}>계정이 없으신가요?</span> 회원가입
             </span>
           </div>
         </div>

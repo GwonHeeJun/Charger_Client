@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Chart from "react-apexcharts";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import { connect } from "react-redux";
+import { changeMenu } from "../../stores/Layout/Layout.store";
 import * as Credit from "../../lib/credit";
 import "./TradeMarket.scss";
 
@@ -10,7 +12,7 @@ class TradeMarket extends Component {
     super(props);
 
     this.state = {
-      count : 0,
+      count: 0,
       priceSellKW: 0,
       completeBuy: [],
       buyKw: 0,
@@ -273,6 +275,8 @@ class TradeMarket extends Component {
         }
       ]
     };
+
+    this.onClickChangeMenu = this.onClickChangeMenu.bind();
   }
 
   onChange = e => {
@@ -282,6 +286,12 @@ class TradeMarket extends Component {
     });
   };
 
+  onClickChangeMenu = (menu) => {
+    const { changeMenu } = this.props;
+
+    changeMenu(menu);
+  } 
+
   onChangeBuy = e => {
     const { name, value } = e.target;
     e.preventDefault();
@@ -290,17 +300,21 @@ class TradeMarket extends Component {
       [name]: value
     });
     Credit.GetPrice({
-        token : localStorage.getItem('charger-token'),
-        electricity: value
+      token: localStorage.getItem("charger-token"),
+      electricity: value
     }).then(res => {
-        this.setState({
-            priceBuy: res.data.price
-        })
-    })
+      this.setState({
+        priceBuy: res.data.price
+      });
+    });
   };
 
   onSubmitSale = e => {
     e.preventDefault();
+    if (!localStorage.getItem("charger-token")) {
+      alert("로그인 후 이용이 가능합니다.");
+      this.onClickChangeMenu('signin');
+    }
 
     Credit.PostNewSale({
       selling_elec: this.state.sellKw,
@@ -308,24 +322,28 @@ class TradeMarket extends Component {
       token: localStorage.getItem("charger-token")
     }).then(res => {
       this.setState({
-        count : this.state.count + 1
-      })
-      alert("판매가 등록되었습니다.")
+        count: this.state.count + 1
+      });
+      alert("판매가 등록되었습니다.");
     });
   };
 
   onSubmitBuy = e => {
     e.preventDefault();
+    if (!localStorage.getItem("charger-token")) {
+      alert("로그인 후 이용이 가능합니다.");
+      this.onClickChangeMenu('signin');
+    }
 
     Credit.Trade({
       token: localStorage.getItem("charger-token"),
       trading_elec: this.state.buyKw
     }).then(res => {
-        this.setState({
-          count : this.state.count + 1
-        })
-        alert("구매가 완료되었습니다.")
-    })
+      this.setState({
+        count: this.state.count + 1
+      });
+      alert("구매가 완료되었습니다.");
+    });
   };
 
   componentDidMount() {
@@ -335,7 +353,6 @@ class TradeMarket extends Component {
       this.setState({
         completeBuy: res.data.sale_list
       });
-      
     });
   }
 
@@ -424,7 +441,7 @@ class TradeMarket extends Component {
                   label="금액"
                   name="phone"
                   type="text"
-                  value={this.state.priceSellKW * this.state.sellKw} 
+                  value={this.state.priceSellKW * this.state.sellKw}
                   autoComplete="current-password"
                   margin="normal"
                   variant="outlined"
@@ -467,4 +484,16 @@ class TradeMarket extends Component {
   }
 }
 
-export default TradeMarket;
+const mapStateToProps = state => {
+  return {
+    menu: state.layout.menu
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    changeMenu: menu => dispatch(changeMenu(menu))
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(TradeMarket);
