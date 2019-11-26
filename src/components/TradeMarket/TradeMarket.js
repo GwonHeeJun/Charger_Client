@@ -286,11 +286,11 @@ class TradeMarket extends Component {
     });
   };
 
-  onClickChangeMenu = (menu) => {
+  onClickChangeMenu = menu => {
     const { changeMenu } = this.props;
 
     changeMenu(menu);
-  } 
+  };
 
   onChangeBuy = e => {
     const { name, value } = e.target;
@@ -313,7 +313,16 @@ class TradeMarket extends Component {
     e.preventDefault();
     if (!localStorage.getItem("charger-token")) {
       alert("로그인 후 이용이 가능합니다.");
-      this.onClickChangeMenu('signin');
+      this.onClickChangeMenu("signin");
+      return 0;
+    }
+    if (this.state.sell === 0) {
+      alert("판매가격이 명확하지 않습니다. 다시 확인해주세요");
+      return 0;
+    }
+    if (this.state.priceSellKW === 0) {
+      alert("판매가격이 명확하지 않습니다. 다시 확인해주세요");
+      return 0;
     }
 
     Credit.PostNewSale({
@@ -324,15 +333,23 @@ class TradeMarket extends Component {
       this.setState({
         count: this.state.count + 1
       });
-      alert("판매가 등록되었습니다.");
-    });
+      console.log(res.data)
+        alert("판매가 등록되었습니다.");
+    }).catch(err => {
+      console.log(err)
+    })
   };
 
   onSubmitBuy = e => {
     e.preventDefault();
     if (!localStorage.getItem("charger-token")) {
       alert("로그인 후 이용이 가능합니다.");
-      this.onClickChangeMenu('signin');
+      this.onClickChangeMenu("signin");
+      return 0;
+    }
+    if (this.state.buyKw === 0) {
+      alert("구매가격이 명확하지 않습니다. 다시 확인해주세요");
+      return 0;
     }
 
     Credit.Trade({

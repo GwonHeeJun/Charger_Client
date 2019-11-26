@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { ReactComponent as Charger } from "../../assets/Charger.svg";
-import { ReactComponent as Notification } from "../../assets/notification.svg";
 import { connect } from "react-redux";
 import { changeMenu, isLogined } from "../../stores/Layout/Layout.store";
 import { ReactComponent as Signout } from "../../assets/Signout.svg";

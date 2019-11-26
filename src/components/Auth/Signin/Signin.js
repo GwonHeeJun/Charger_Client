@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { isLogined, changeMenu } from "../../../stores/Layout/Layout.store";
 import { connect } from "react-redux";
-import { ReactComponent as Lock } from "../../../assets/lock.svg";
 import * as Auth from "../../../lib/auth";
 import "./Signin.scss";
 
