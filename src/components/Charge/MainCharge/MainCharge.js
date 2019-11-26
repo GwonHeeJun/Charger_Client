@@ -59,13 +59,10 @@ class MainCharge extends Component {
       token : localStorage.getItem('charger-token')
     })
       .then(result => {
-        console.log(result);
         alert("충전이 완료되었습니다.")
         this.onClickChangeChargeNav("history")
       })
       .catch(result => {
-        console.log(result)
-        console.log("실패");
       });
   };
 

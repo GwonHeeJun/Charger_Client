@@ -21,7 +21,6 @@ class HasCharger extends Component {
         })
       })
       .catch(err => {
-        console.log(err);
       });
   }
 

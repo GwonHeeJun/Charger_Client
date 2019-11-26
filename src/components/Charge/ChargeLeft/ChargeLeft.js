@@ -22,7 +22,6 @@ class ChargeLeft extends Component {
     }
   render() {
       const {chargeNav } = this.props;
-      console.log(chargeNav);
     return (
       <div className="c-charge-left">
         <div className="c-charge-left__navi" >

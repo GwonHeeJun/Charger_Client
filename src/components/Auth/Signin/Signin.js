@@ -44,18 +44,15 @@ class Signin extends Component {
       password: this.state.password
     })
       .then(result => {
-        console.log(result);
         localStorage.setItem("charger-token", result.data.token);
         this.onClickChangeMenu("main");
         this.onSubmitLogin(true);
       })
       .catch(result => {
-        console.log("실패");
       });
   };
 
   render() {
-    console.log(this.props);
 
     return (
       <div className="c-signin">

@@ -31,7 +31,6 @@ class Register extends Component {
     this.setState({
       [name]: value
     });
-    console.log(value);
   };
 
   onSubmit = e => {
@@ -52,7 +51,6 @@ class Register extends Component {
       email : this.state.email,
       phone: this.state.phone
     }).then(res => {
-      console.log(res);
       this.onClickChangeMenu("signin")
     })
   };

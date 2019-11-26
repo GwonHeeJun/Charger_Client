@@ -19,7 +19,6 @@ class ProfileDescription extends Component {
     User.Check({
       token: localStorage.getItem("charger-token")
     }).then(res => {
-      console.log(res.data);
       this.setState({
         name : res.data.name,
         email : res.data.email,

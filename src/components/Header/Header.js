@@ -38,7 +38,6 @@ export class Header extends Component {
     User.Check({
       token : localStorage.getItem('charger-token')
     }).then(res => {
-      console.log(res)
       this.setState({
         money: res.data.credit,
         elec : res.data.electricity

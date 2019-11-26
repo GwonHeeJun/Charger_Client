@@ -70,7 +70,7 @@ class SubHeader extends Component {
                     <small>전력</small>
                   </span>
                   <span id="price">
-                    KW당 600<small>2.00%</small>
+                    1KW = 600<small>2.00%</small>
                   </span>
                   <span id="type">Main</span>
                 </div>

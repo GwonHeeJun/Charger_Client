@@ -20,7 +20,6 @@ class ProfileHeader extends Component {
   };
   render() {
     const { profile } = this.props;
-    console.log(profile);
     return (
       <nav className="c-myheader">
         <div className="c-myheader__wrapper">

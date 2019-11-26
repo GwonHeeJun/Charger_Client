@@ -280,7 +280,6 @@ class TradeMarket extends Component {
     this.setState({
       [name]: value
     });
-    console.log(value);
   };
 
   onChangeBuy = e => {
@@ -294,7 +293,6 @@ class TradeMarket extends Component {
         token : localStorage.getItem('charger-token'),
         electricity: value
     }).then(res => {
-        console.log(res.data.price)
         this.setState({
             priceBuy: res.data.price
         })
@@ -309,7 +307,6 @@ class TradeMarket extends Component {
       selling_price: this.state.priceSellKW,
       token: localStorage.getItem("charger-token")
     }).then(res => {
-      console.log(res);
       this.setState({
         count : this.state.count + 1
       })
@@ -324,7 +321,6 @@ class TradeMarket extends Component {
       token: localStorage.getItem("charger-token"),
       trading_elec: this.state.buyKw
     }).then(res => {
-        console.log(res)
         this.setState({
           count : this.state.count + 1
         })
