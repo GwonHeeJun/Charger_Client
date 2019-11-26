@@ -32,9 +32,15 @@ class Introduce extends Component {
               <span>빠른 전력 거래</span>
             </span>
             <h2>전력거래소 _ Charger에서 시작하세요</h2>
-            <button onClick={e => this.onClickChangeMenu(e, "register")}>
-              지금 가입하기
-            </button>
+            {localStorage.getItem("charger-token") === null ? (
+              <button onClick={e => this.onClickChangeMenu(e, "register")}>
+                지금 가입하기
+              </button>
+            ) : (
+              <button onClick={e => this.onClickChangeMenu(e, "exchange")}>
+                지금 거래하기
+              </button>
+            )}
           </div>
         </div>
         <div className="c-introduce__image">
