@@ -34,7 +34,7 @@ export class Header extends Component {
     isLogined(islogin);
   };
 
-  componentDidMount() {
+  componentDidUpdate() {
     User.Check({
       token : localStorage.getItem('charger-token')
     }).then(res => {
@@ -43,7 +43,22 @@ export class Header extends Component {
         elec : res.data.electricity
       })
     })
+
   }
+
+  // componentDidMount() {
+  //   User.Check({
+  //     token : localStorage.getItem('charger-token')
+  //   }).then(res => {
+  //     this.setState({
+  //       money: res.data.credit,
+  //       elec : res.data.electricity
+  //     })
+  //   })
+  //   this.setState({
+  //     count: this.state.count + 1
+  //   })
+  // }
 
   render() {
     const { logined } = this.props;
