@@ -373,6 +373,16 @@ class TradeMarket extends Component {
     });
   }
 
+  componentDidUpdate() {
+    Credit.GetMySaleList({
+      token: localStorage.getItem("charger-token")
+    }).then(res => {
+      this.setState({
+        completeBuy: res.data.sale_list
+      });
+    });
+  }
+
   render() {
     return (
       <div className="c-trade-market">
@@ -477,7 +487,7 @@ class TradeMarket extends Component {
             </div>
           </div>
           <div className="c-trade-market__bottom--trade-list">
-            <span>최근 판매 목록</span>
+            <span>최근 등록된 거래 목록</span>
             <div className="c-trade-market__bottom--trade-list__type">
               <span>번호</span>
               <span>총 금액</span>
