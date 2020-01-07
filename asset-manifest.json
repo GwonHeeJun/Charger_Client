@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.f8638f7e.chunk.css",
+    "main.js": "/static/js/main.a322c1fb.chunk.js",
+    "main.js.map": "/static/js/main.a322c1fb.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.c97e7a63.js",
+    "runtime-main.js.map": "/static/js/runtime-main.c97e7a63.js.map",
+    "static/js/2.c31990b5.chunk.js": "/static/js/2.c31990b5.chunk.js",
+    "static/js/2.c31990b5.chunk.js.map": "/static/js/2.c31990b5.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.281453c268ece40f95778841ecab654d.js": "/precache-manifest.281453c268ece40f95778841ecab654d.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.f8638f7e.chunk.css.map": "/static/css/main.f8638f7e.chunk.css.map",
+    "static/media/Charger.svg": "/static/media/Charger.fc91909d.svg",
+    "static/media/Signout.294f594e.svg": "/static/media/Signout.294f594e.svg",
+    "static/media/payOnline.ec6f4c28.svg": "/static/media/payOnline.ec6f4c28.svg",
+    "static/media/profile.be888b4f.svg": "/static/media/profile.be888b4f.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c97e7a63.js",
+    "static/js/2.c31990b5.chunk.js",
+    "static/css/main.f8638f7e.chunk.css",
+    "static/js/main.a322c1fb.chunk.js"
+  ]
+}
